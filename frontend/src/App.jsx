@@ -203,13 +203,13 @@ function App() {
         <section className="hero section" id="home">
           <div className="hero-copy">
             <h1>CYRUS CHAU</h1>
-            <div className="hero-ticker" role="note" aria-label="Dream on">
+            <div className="hero-ticker" role="note" aria-label="Build forward">
               <div className="hero-ticker-track" aria-hidden="true">
                 {[...Array(2)].map((_, groupIndex) => (
                   <div className="hero-ticker-group" key={groupIndex}>
                     {[...Array(10)].map((__, itemIndex) => (
                       <span className="hero-ticker-item" key={itemIndex}>
-                        DREAM ON <span className="hero-ticker-separator">✦</span>
+                        BUILD FORWARD <span className="hero-ticker-separator">✦</span>
                       </span>
                     ))}
                   </div>
