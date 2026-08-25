@@ -104,30 +104,6 @@ function App() {
 
   useEffect(() => () => window.clearTimeout(secretHoldTimerRef.current), [])
 
-  useEffect(() => {
-    const sections = document.querySelectorAll('.section:not(.hero)')
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      sections.forEach((section) => section.classList.add('is-visible'))
-      return undefined
-    }
-
-    sections.forEach((section) => section.classList.add('scroll-reveal'))
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible')
-          observer.unobserve(entry.target)
-        }
-      })
-    }, { threshold: 0.12, rootMargin: '0px 0px -25% 0px' })
-
-    sections.forEach((section) => observer.observe(section))
-    return () => observer.disconnect()
-  }, [])
-
   const closeIntro = () => {
     setIntroLeaving(true)
     window.setTimeout(() => setShowIntro(false), 700)
@@ -347,11 +323,10 @@ function App() {
             <p>Snapshots from life, friendship and travel. <a className="photo-album-link" href="https://drive.google.com/drive/folders/1FlLawvDOswFA3QDlQhGH4ok9B6JWlRn5?usp=sharing" target="_blank" rel="noreferrer">View Canada album ↗</a></p>
           </div>
           <div className="photo-grid">
-            {photos.map((photo, index) => (
+            {photos.map((photo) => (
               <figure className={photo.className} key={photo.label}>
                 <div>
                   <img src={photo.image} alt={photo.label} style={{ objectPosition: photo.position }} />
-                  <span>0{index + 1}</span>
                 </div>
                 <figcaption>{photo.label}</figcaption>
               </figure>
