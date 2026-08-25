@@ -1,0 +1,25 @@
+:root {
+  --background: #090b0c;
+  --surface: #111416;
+  --surface-light: #191d20;
+  --ink: #f7f7f2;
+  --muted: #92999b;
+  --accent: #ff4b3e;
+  --line: #292e30;
+  --serif: Futura, 'Futura PT', 'Avenir Next', Avenir, sans-serif;
+  font-family: Futura, 'Futura PT', 'Avenir Next', Avenir, system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { min-width: 320px; min-height: 100vh; margin: 0; background: var(--background); }
+button, a { font: inherit; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+::selection { color: white; background: var(--accent); }

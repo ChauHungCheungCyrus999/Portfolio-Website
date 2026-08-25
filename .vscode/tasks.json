@@ -1,0 +1,41 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Backend: Dev",
+			"type": "shell",
+			"command": "${workspaceFolder}/backend/.venv/bin/python",
+			"args": ["${workspaceFolder}/backend/app.py"],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Frontend: Dev",
+			"type": "shell",
+			"command": "npm",
+			"args": ["--prefix", "frontend", "run", "dev"],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Full Stack: Dev",
+			"dependsOn": ["Backend: Dev", "Frontend: Dev"],
+			"dependsOrder": "parallel",
+			"problemMatcher": []
+		},
+		{
+			"label": "Frontend: Build",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}
