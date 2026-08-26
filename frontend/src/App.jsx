@@ -8,6 +8,7 @@ import paddlePhoto from './assets/StandupPaddle.jpg'
 import barPhoto from './assets/Bar.JPG'
 import sunsetPhoto from './assets/SunsetJPG.JPG'
 import parrotPhoto from './assets/Parrot.JPG'
+import cvPdf from './assets/CV_ChauHungCheungCyrus.pdf'
 
 const projects = [
   { number: '01', title: 'RAG Q&A Web App with Vector Database and LLM Integration', description: 'Built a Flask-based Q&A application leveraging MySQL, FAISS vector databases, and large language models to provide natural language answers over company knowledge. The system supports Chinese and English with over 95% accuracy, handles datasets exceeding 1,000 entries, and delivers responses within five seconds.', tags: ['Python', 'JavaScript', 'Flask', 'RESTful API'], link: 'https://github.com/ChauHungCheungCyrus999/RAGQ-AChatBot', linkType: 'GitHub' },
@@ -246,6 +247,7 @@ function App() {
             <div className="bio">
               <p>I’m a Computer Science undergraduate with hands-on experience building full-stack web applications, AI-powered tools and internal business systems.</p>
               <p>Skilled in Python, React, Flask, SQL and LLM/RAG application development, I deliver production features, improve operational efficiency and communicate clearly with technical and non-technical stakeholders.</p>
+              <a className="cv-download" href={cvPdf} download="CV_ChauHungCheungCyrus.pdf">Download CV <span>↓</span></a>
             </div>
           </div>
           <div className="facts">
